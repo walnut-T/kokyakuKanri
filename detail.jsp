@@ -43,9 +43,7 @@
             </tr>
         </table>
         <form action="CustomerServlet" method="post">
-            <p>
-
-                <!-- TODO ｢編集｣ボタン -->
+            <p>                <!-- TODO ｢編集｣ボタン -->
 
                 <input type="button" value="戻る" onclick="history.back()">
                 <button name="state" value="edit,<%=customer.getId()%>">編集</button>
