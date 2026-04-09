@@ -43,7 +43,7 @@
 			</tr>
 		</table>
 		<form action="CustomerServlet" method="post">
-		<button name="state" value="delete,<%=customer.getId()%>">OK</button>
+		<button name="state" value="delete_success,<%=customer.getId()%>">OK</button>
 		<input type="button" value="戻る" onclick="history.back()">
 	</div>
 </body>
