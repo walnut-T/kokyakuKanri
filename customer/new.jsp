@@ -23,27 +23,27 @@
                 </tr>
                 <tr>
                     <td class="title">郵便番号</td>
-                    <td><input type="text" name="post_codee" maxlength="20"></td>
+                    <td><input type="text" name="post_code" maxlength="20"></td>
                 </tr>
                 <tr>
                     <td class="title">住所1</td>
-                    <td><input type="password" name="post_code" maxlength="100"></td>
+                    <td><input type="text" name="address1" maxlength="100"></td>
                 </tr>
                 <tr>
                     <td class="title">住所2</td>
-                    <td><input type="password" name="password2" maxlength="100"></td>
+                    <td><input type="text" name="address2" maxlength="100"></td>
                 </tr>
                 <tr>
                     <td class="title">TEL</td>
-                    <td><input type="title" name="telephone_number" maxlength="20"></td>
+                    <td><input type="text" name="telephone_number" maxlength="20"></td>
                 </tr>
                 <tr>
                     <td class="title">FAX</td>
-                    <td><input type="title" name="fax_number" maxlength="20"></td>
+                    <td><input type="text" name="fax_number" maxlength="20"></td>
                 </tr>
                 <tr>
                     <td class="title">E-mail</td>
-                    <td><input type="title" name="e-mail" maxlength="100"></td>
+                    <td><input type="text" name="e-mail" maxlength="100"></td>
                 </tr>
             </table>
             <p>
@@ -61,18 +61,36 @@
 
         // TODO バリデーションチェック･alertダイアログ処理
     	/*
-        if (document.form1.user_name.value == "") {
-            alert("氏名が入力されていません。");
+        if (document.form1.user_name.value.length > 20) {
+            alert("xxxxxxxxxxxxxxxxxxxx");
             return false;
         }
-        if (!document.form1.password1.value.match(/^[\x20-\x7E]+$/)) {
-            alert("パスワードは半角英数字と記号で入力してください");
+        if (!document.form1.post_code.value.length > 20) {
+            alert("xxxxxxxxxxxxxxxxxxxx");
             return false;
         }
-        if (document.form1.password1.value != document.form1.password2.value) {
-            alert("確認用のパスワードが一致しません");
+        if (document.form1.address1.value.length > 100) {
+            alert("xxxxxxxxxxxxxxxxxxxx");
             return false;
         }
+    	}
+        if (!document.form1.address2.value.length > 100) {
+            alert("xxxxxxxxxxxxxxxxxxxx");
+            return false;
+        }
+        if (document.form1.telephone_number.value.length > 20) {
+            alert("xxxxxxxxxxxxxxxxxxxx");
+            return false;
+        }
+    }
+    if (!document.form1.fax_number.value.length > 20) {
+        alert("xxxxxxxxxxxxxxxxxxxx");
+        return false;
+    }
+    if (document.form1.e-mail.value.length > 100) {
+        alert("xxxxxxxxxxxxxxxxxxxx");
+        return false;
+    }
     }
         */
 </script>
