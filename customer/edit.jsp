@@ -15,43 +15,94 @@
     <div class="main">
 
         <!-- TODO ｢既存データ編集･削除｣画面 -->
-        <div class="main">
-        <h2>詳細</h2>
-        <table border="1">
-            <tr>
-                <td class="title">氏名</td>
-                <td><%=customer.getName()%></td>
-            </tr>
-            <tr>
-                <td class="title">郵便番号</td>
-                <td><%=customer.getZip()%></td>
-            </tr>
-            <tr>
-                <td class="title">住所1</td>
-                <td><%=customer.getAddress1()%></td>
-            </tr>
-            <tr>
-                <td class="title">住所2</td>
-                <td><%=customer.getAddress2()%></td>
-            </tr>
-            <tr>
-                <td class="title">TEL</td>
-                <td><%=customer.getTel()%></td>
-            </tr>
-            <tr>
-                <td class="title">FAX</td>
-                <td><%=customer.getFax()%></td>
-            </tr>
-            <tr>
-                <td class="title">E-mail</td>
-                <td><%=customer.getEmail()%></td>
-            </tr>
-        </table>
-        <form action="CustomerServlet" method="post">
+            <h2>既存データの編集</h2>
+        <form name="form1" action="CustomerServlet" method="post"
+            onsubmit="return funcConfirm()">
+            <table>
+            	<tr>
+                    <td class="title">氏名</td>
+                    <td><input type="text" name="name" maxlength="20"
+                        value="<%--=userEdit.getName()--%>"></td>
+                </tr>
+                <tr>
+                    <td class="title">郵便番号</td>
+                    <td><input type="text" name="zip" maxlength="15"
+                        value="<%--=userEdit.getZip()--%>"></td>
+                </tr>
+                <tr>
+                 <td class="title">住所1</td>
+                    <td><input type="text" name="address1" maxlength="15"
+                        value="<%--=Edit.getAddress1() --%>"></td>
+                </tr>
+                <tr>
+                 <td class="title">住所2</td>
+                    <td><input type="text" name="address2" maxlength="15"
+                        value="<%--=userEdit.getAddress2()--%>"></td>
+                </tr>
+                <tr>
+                 <td class="title">TEL</td>
+                    <td><input type="text" name="tel" maxlength="15"
+                        value="<%--=userEdit.getTel()--%>"></td>
+                </tr>
+                <tr>
+                 <td class="title">FAX</td>
+                    <td><input type="text" name="fax" maxlength="15"
+                        value="<%--=userEdit.getFax()--%>"></td>
+                </tr>
+                <tr>
+                 <td class="title">E-mail</td>
+                    <td><input type="text" name="email" maxlength="15"
+                        value="<%--=userEdit.getEmail()--%>"></td>
+                </tr>
+                <tr>
+                   
+                </tr>
+            </table>
+            
             <p>
-            <button name="state" value="add_success">OK</button>  <input type="button" value="戻る" onclick="history.back()">
-    
-
+                <button name="state" value="update">送信</button>
+                <input type="button" value="戻る" onclick="history.back()">
+             
+            </p>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function funcConfirm() {
+            if (document.form1.name.value == "") {
+                alert("氏名が入力されていません。");
+                return false;
+            }
+            if (document.form1.zip.value == "") {
+                alert("郵便番号が入力されていません。");
+                return false;
+            }
+            if (document.form1.address1.value == "") {
+                alert("住所1が入力されていません。");
+                return false;
+            }
+            if (document.form1.address2.value == "") {
+                alert("住所2が入力されていません。");
+                return false;
+            }
+            if (document.form1.tel.value == "") {
+                alert("TELが入力されていません。");
+                return false;
+            }
+            if (document.form1.fax.value == "") {
+                alert("FAXが入力されていません。");
+                return false;
+            }
+            if (document.form1.email.value == "") {
+                alert("E-mailが入力されていません。");
+                return false;
+            }
+        }
+        
+            }
+        }
+        
+        }
+    </script>
     </div>
 </body>
 <script type="text/javascript">
