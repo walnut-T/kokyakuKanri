@@ -11,7 +11,13 @@
     <div class="main">
 
         <!-- TODO ｢更新未完了｣画面 -->
-
+        <h2>更新未完了</h2>
+        <h2><%=session.getAttribute("errMessage")%></h2>
+        <form action="CustomerServlet" method="post">
+            <p>
+                <button name="state" value="search">検索画面</button>
+            </p>
+        </form>
     </div>
 </body>
 </html>

@@ -43,10 +43,10 @@
             </tr>
         </table>
         <form action="CustomerServlet" method="post">
-            <p>
+            <p>                <!-- TODO ｢編集｣ボタン -->
 
-                <!-- TODO ｢編集｣ボタン -->
-                <input type="button" value="編集" onclick="">  <input type="button" value="戻る" onclick="history.back()">
+                <input type="button" value="戻る" onclick="history.back()">
+                <button name="state" value="edit,<%=customer.getId()%>">編集</button>
             </p>
         </form>
     </div>
