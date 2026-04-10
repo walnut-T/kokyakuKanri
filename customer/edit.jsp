@@ -22,37 +22,37 @@
             	<tr>
                     <td class="title">氏名</td>
                     <td><input type="text" name="name" maxlength="20"
-                        value="<%--=userEdit.getName()--%>"></td>
+                        value="<%=userEdit.getName()%>"></td>
                 </tr>
                 <tr>
                     <td class="title">郵便番号</td>
                     <td><input type="text" name="zip" maxlength="15"
-                        value="<%--=userEdit.getZip()--%>"></td>
+                        value="<%=userEdit.getZip()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">住所1</td>
                     <td><input type="text" name="address1" maxlength="15"
-                        value="<%--=Edit.getAddress1() --%>"></td>
+                        value="<%=Edit.getAddress1() %>"></td>
                 </tr>
                 <tr>
                  <td class="title">住所2</td>
                     <td><input type="text" name="address2" maxlength="15"
-                        value="<%--=userEdit.getAddress2()--%>"></td>
+                        value="<%=userEdit.getAddress2()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">TEL</td>
                     <td><input type="text" name="tel" maxlength="15"
-                        value="<%--=userEdit.getTel()--%>"></td>
+                        value="<%=userEdit.getTel()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">FAX</td>
                     <td><input type="text" name="fax" maxlength="15"
-                        value="<%--=userEdit.getFax()--%>"></td>
+                        value="<%=userEdit.getFax()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">E-mail</td>
                     <td><input type="text" name="email" maxlength="15"
-                        value="<%--=userEdit.getEmail()--%>"></td>
+                        value="<%=userEdit.getEmail()%>"></td>
                 </tr>
                 <tr>
                    
@@ -60,7 +60,7 @@
             </table>
             
             <p>
-                <button name="state" value="update">送信</button>
+                <button name="state" value="edit_confirm">送信</button>
                 <input type="button" value="戻る" onclick="history.back()">
              
             </p>
@@ -68,48 +68,51 @@
     </div>
     <script type="text/javascript">
         function funcConfirm() {
-            if (document.form1.name.value == "") {
-                alert("氏名が入力されていません。");
-                return false;
-            }
-            if (document.form1.zip.value == "") {
-                alert("郵便番号が入力されていません。");
-                return false;
-            }
-            if (document.form1.address1.value == "") {
-                alert("住所1が入力されていません。");
-                return false;
-            }
-            if (document.form1.address2.value == "") {
-                alert("住所2が入力されていません。");
-                return false;
-            }
-            if (document.form1.tel.value == "") {
-                alert("TELが入力されていません。");
-                return false;
-            }
-            if (document.form1.fax.value == "") {
-                alert("FAXが入力されていません。");
-                return false;
-            }
-            if (document.form1.email.value == "") {
-                alert("E-mailが入力されていません。");
-                return false;
-            }
-        }
-        
-            }
-        }
-        
-        }
+        	if (document.form1.user_name.value == "") {
+    			alert("氏名が入力されていません。");
+    			return false;
+    		}
+    		if (document.form1.post_code.value == "") {
+    			alert("郵便番号が入力されていません。");
+    			return false;
+    		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+    			alert("郵便番号は半角数字と半角ハイフンで入力してください");
+    			return false;
+    		}
+    		if (document.form1.address1.value == "") {
+    			alert("住所1が入力されていません。");
+    			return false;
+    		}
+    		if (document.form1.address2.value == "") {
+    			alert("住所2が入力されていません。");
+    			return false;
+    		}
+    		if (document.form1.telephone_number.value == "") {
+    			alert("電話番号が入力されていません。");
+    			return false;
+    		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+    			alert("電話番号は半角数字と半角ハイフンで入力してください");
+    			return false;
+    		}
+    		if (document.form1.fax_number.value == "") {
+    			alert("FAXが入力されていません。");
+    			return false;
+    		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+    			alert("電話番号は半角数字と半角ハイフンで入力してください");
+    			return false;
+    		}
+    		if (document.form1.e - mail.value == "") {
+    			alert("メールアドレスが入力されていません。");
+    			return false;
+    		}
     </script>
     </div>
 </body>
-<script type="text/javascript">
+<%-- script type="text/javascript">
     function funcConfirm() {
 
         // TODO バリデーションチェック･alertダイアログ処理
 
     }
-</script>
+</script>--%>
 </html>
