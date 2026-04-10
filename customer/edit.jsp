@@ -22,12 +22,12 @@
             	<tr>
                     <td class="title">氏名</td>
                     <td><input type="text" name="name" maxlength="20"
-                        value="<%=userEdit.getName()%>"></td>
+                        value="<%=Edit.getName()%>"></td>
                 </tr>
                 <tr>
                     <td class="title">郵便番号</td>
                     <td><input type="text" name="zip" maxlength="15"
-                        value="<%=userEdit.getZip()%>"></td>
+                        value="<%=Edit.getZip()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">住所1</td>
@@ -37,22 +37,22 @@
                 <tr>
                  <td class="title">住所2</td>
                     <td><input type="text" name="address2" maxlength="15"
-                        value="<%=userEdit.getAddress2()%>"></td>
+                        value="<%=Edit.getAddress2()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">TEL</td>
                     <td><input type="text" name="tel" maxlength="15"
-                        value="<%=userEdit.getTel()%>"></td>
+                        value="<%=Edit.getTel()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">FAX</td>
                     <td><input type="text" name="fax" maxlength="15"
-                        value="<%=userEdit.getFax()%>"></td>
+                        value="<%=Edit.getFax()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">E-mail</td>
                     <td><input type="text" name="email" maxlength="15"
-                        value="<%=userEdit.getEmail()%>"></td>
+                        value="<%=Edit.getEmail()%>"></td>
                 </tr>
                 <tr>
                    
