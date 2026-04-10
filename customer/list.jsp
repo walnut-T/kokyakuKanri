@@ -61,7 +61,7 @@
                 <%
                     if (user.getLvl() >= 1) {
                 %>
-				<button name="state" value="new">新規登録</button>
+				<button name="state" value="new" formaction="CostomerServlet">新規登録</button>
 				<% } %>
                 <button name="state" value="search">検索条件画面</button>
             </p>
