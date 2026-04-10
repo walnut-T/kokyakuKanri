@@ -11,7 +11,6 @@
 <body>
 	<h1>顧客管理</h1>
 	<div class="main">
-
 		<!-- TODO ｢新規登録｣画面 -->
 		<h2>新規登録</h2>
 		<form name="form1" action="CostomerServlet" method="post"
@@ -57,66 +56,45 @@
 	</div>
 </body>
 <script type="text/javascript">
-    function funcConfirm() {
-        // TODO バリデーションチェック･alertダイアログ処理（確認中：折原）
-        if (document.form1.user_name.value == "") {
-            alert("氏名が入力されていません。");
-            return false;
-        }else if(dcument.form1.user_name.value.length <= 20){
-            alert("20文字以内で入力してください。")
-            return false;
-       }
-        if (document.form1.post_code.value == "") {
-            alert("郵便番号が入力されていません。");
-            return false;
-        }else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
-            alert("郵便番号は半角数字と半角ハイフンで入力してください");
-            return false;
-        }else if(document.form1.post_code.value.length <= 20){
-            alert("20文字以内で入力してください。")
-            return false;
-       }
-        if (document.form1.address1.value == "") {
-            alert("住所1が入力されていません。");
-            return false;
-        }else if(dcument.form1.address1.value.length <= 100){
-            alert("100文字以内で入力してください。")
-            return false;
-       }
-        if (document.form1.address2.value == "") {
-            alert("住所2が入力されていません。");
-            return false;
-        }else if(dcument.form1.address2.value.length <= 100){
-            alert("100文字以内で入力してください。")
-            return false;
-       }
-        if (document.form1.telephone_number.value =="") {
-            alert("電話番号が入力されていません。");
-            return false;
-        }else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
-            alert("電話番号は半角数字と半角ハイフンで入力してください");
-            return false;
-        }else if(dcument.form1.telephone_number.value.length <= 20){
-            alert("20文字以内で入力してください。")
-            return false;
-       }
-        if (document.form1.fax_number.value =="") {
-            alert("FAXが入力されていません。");
-            return false;
-        }else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
-            alert("電話番号は半角数字と半角ハイフンで入力してください");
-            return false;
-        }else if(dcument.form1.fax_number.value.length <= 20){
-            alert("20文字以内で入力してください。")
-            return false;
-       }
-        if (document.form1.e-mail.value == "") {
-            alert("メールアドレスが入力されていません。");
-            return false;
-        }else if(dcument.form1.e-mail.value.length <= 100){
-            alert("100文字以内で入力してください。")
-            return false;
-       }
-    }
+	function funcConfirm() {
+		// TODO バリデーションチェック･alertダイアログ処理（確認中：折原）
+		if (document.form1.user_name.value == "") {
+			alert("氏名が入力されていません。");
+			return false;
+		}
+		if (document.form1.post_code.value == "") {
+			alert("郵便番号が入力されていません。");
+			return false;
+		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+			alert("郵便番号は半角数字と半角ハイフンで入力してください");
+			return false;
+		}
+		if (document.form1.address1.value == "") {
+			alert("住所1が入力されていません。");
+			return false;
+		}
+		if (document.form1.address2.value == "") {
+			alert("住所2が入力されていません。");
+			return false;
+		}
+		if (document.form1.telephone_number.value == "") {
+			alert("電話番号が入力されていません。");
+			return false;
+		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+			alert("電話番号は半角数字と半角ハイフンで入力してください");
+			return false;
+		}
+		if (document.form1.fax_number.value == "") {
+			alert("FAXが入力されていません。");
+			return false;
+		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+			alert("電話番号は半角数字と半角ハイフンで入力してください");
+			return false;
+		}
+		if (document.form1.e - mail.value == "") {
+			alert("メールアドレスが入力されていません。");
+			return false;
+		}
+	}
 </script>
 </html>
