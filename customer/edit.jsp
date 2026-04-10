@@ -108,11 +108,5 @@
     </script>
     </div>
 </body>
-<%-- script type="text/javascript">
-    function funcConfirm() {
 
-        // TODO バリデーションチェック･alertダイアログ処理
-
-    }
-</script>--%>
 </html>
