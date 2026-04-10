@@ -246,10 +246,24 @@ public class CustomerServlet extends BaseServlet {
      */
     private void procDeleteConfirm(HttpServletRequest request, HttpServletResponse response, String id)
             throws ServletException, IOException {
-        // TODO 未実装（鈴木）
+        // TODO 未実装 →4/10実装中（鈴木）
+    	
+        int intId = Integer.parseInt(id);
+        CustomerLogic customerLogic = new CustomerLogic();
+        CustomerBean customer = null;
+        customer = customerLogic.load(intId);
 
-        getServletContext().getRequestDispatcher("/WEB-INF/xxxx/xxxx.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/WEB-INF/customer/delete_confirm.jsp").forward(request, response);
     }
+    
+    /**
+     * セッションから顧客情報を取得し、DB削除処理後、削除完了(成功時)画面、または、削除未完了(失敗時)画面に遷移する
+     * <pre>
+     * state属性＝"delete"時の処理
+     * </pre>
+     * @param request   HTTPのリクエスト
+     * @param response  HTTPのレスポンス
+     * @param session   HTTPのリクエストに含まれるセッション
 
     /**
      * セッションから顧客情報を取得し、DB削除処理後、削除完了(成功時)画面、または、削除未完了(失敗時)画面に遷移する
@@ -260,11 +274,24 @@ public class CustomerServlet extends BaseServlet {
      * @param response  HTTPのレスポンス
      * @param session   HTTPのリクエストに含まれるセッション
      */
-    private void procDelete(HttpServletRequest request, HttpServletResponse response, HttpSession session)
+private void procDelete(HttpServletRequest request, HttpServletResponse response, HttpSession session)
             throws ServletException, IOException {
-        // TODO 未実装（鈴木）
+        // TODO 未実装 →4/10実装中（鈴木）
+        
+        String errMessage = null;
+        CustomerBean customerEdit = (CustomerBean) session.getAttribute("customerEdit");
+        CustomerLogic customerLogic = new CustomerLogic();
+        errMessage = customerLogic.delete(customerEdit);
 
-        getServletContext().getRequestDispatcher("/WEB-INF/xxxx/xxxx.jsp").forward(request, response);
+        session.removeAttribute("customerEdit");
+
+        if (errMessage == null) {
+            getServletContext().getRequestDispatcher("/WEB-INF/customer/delete_success.jsp").forward(request, response);
+        } else {
+            session.setAttribute("errMessage", errMessage);
+
+            getServletContext().getRequestDispatcher("/WEB-INF/customer/delete_fail.jsp").forward(request, response);
+        }
     }
 
     /**
