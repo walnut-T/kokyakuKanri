@@ -214,9 +214,9 @@ public class CustomerServlet extends BaseServlet {
      * @param response  HTTPのレスポンス
      */
     private void procNew(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO 未実装（千々岩）
+        // TODO 未実装（折原）
 
-        getServletContext().getRequestDispatcher("/WEB-INF/xxxx/xxxx.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/WEB-INF/customer/new.jsp").forward(request, response);
     }
 
     /**
