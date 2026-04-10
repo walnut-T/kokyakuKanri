@@ -189,11 +189,11 @@ public class CustomerServlet extends BaseServlet {
             throws ServletException, IOException {
         // TODO 未実装4/10実装中(大塚)
         String errMessage = null;
-        UserBean userEdit = (UserBean) session.getAttribute("userEdit");
-        UserLogic userLogic = new UserLogic();
-        errMessage = userLogic.delete(userEdit);
+        CustomerBean customerEdit = (CustomerBean) session.getAttribute("customerEdit");
+        CustomerLogic customerLogic = new CustomerLogic();
+        errMessage = customerLogic.update(customerEdit);
 
-        session.removeAttribute("userEdit");
+        session.removeAttribute("customerEdit");
 
         if (errMessage == null) {
             getServletContext().getRequestDispatcher("/WEB-INF/customer/update_success.jsp").forward(request, response);
