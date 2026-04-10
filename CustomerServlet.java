@@ -188,8 +188,21 @@ public class CustomerServlet extends BaseServlet {
     private void procUpdate(HttpServletRequest request, HttpServletResponse response, HttpSession session)
             throws ServletException, IOException {
         // TODO 未実装4/10実装中(大塚)
+        String errMessage = null;
+        UserBean userEdit = (UserBean) session.getAttribute("userEdit");
+        UserLogic userLogic = new UserLogic();
+        errMessage = userLogic.delete(userEdit);
 
-        getServletContext().getRequestDispatcher("/WEB-INF/customer/update_success.jsp").forward(request, response);
+        session.removeAttribute("userEdit");
+
+        if (errMessage == null) {
+            getServletContext().getRequestDispatcher("/WEB-INF/customer/update_success.jsp").forward(request, response);
+        } else {
+            session.setAttribute("errMessage", errMessage);
+
+            getServletContext().getRequestDispatcher("/WEB-INF/customer/update_fail.jsp").forward(request, response);
+        }
+        
     }
 
     /**
