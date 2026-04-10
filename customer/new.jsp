@@ -35,15 +35,15 @@
                 </tr>
                 <tr>
                     <td class="title">TEL</td>
-                    <td><input type="text" name="telephone_number" maxlength="20"></td>
+                    <td><input type="tel" name="telephone_number" maxlength="20"></td>
                 </tr>
                 <tr>
                     <td class="title">FAX</td>
-                    <td><input type="text" name="fax_number" maxlength="20"></td>
+                    <td><input type="tel" name="fax_number" maxlength="20"></td>
                 </tr>
                 <tr>
                     <td class="title">E-mail</td>
-                    <td><input type="text" name="e-mail" maxlength="100"></td>
+                    <td><input type="email" name="e-mail" maxlength="100"></td>
                 </tr>
             </table>
             <p>
@@ -60,38 +60,36 @@
     function funcConfirm() {
 
         // TODO バリデーションチェック･alertダイアログ処理
-    	/*
-        if (document.form1.user_name.value.length > 20) {
+        if (document.form1.user_name.value.length <= 20) {
             alert("xxxxxxxxxxxxxxxxxxxx");
             return false;
         }
-        if (!document.form1.post_code.value.length > 20) {
+        if (!document.form1.post_code.value.length <= 20) {
             alert("xxxxxxxxxxxxxxxxxxxx");
             return false;
         }
-        if (document.form1.address1.value.length > 100) {
+        if (document.form1.address1.value.length <= 100) {
             alert("xxxxxxxxxxxxxxxxxxxx");
             return false;
         }
     	}
-        if (!document.form1.address2.value.length > 100) {
+        if (!document.form1.address2.value.length <= 100) {
             alert("xxxxxxxxxxxxxxxxxxxx");
             return false;
         }
-        if (document.form1.telephone_number.value.length > 20) {
+        if (document.form1.telephone_number.value.length <= 20) {
             alert("xxxxxxxxxxxxxxxxxxxx");
             return false;
         }
     }
-    if (!document.form1.fax_number.value.length > 20) {
+    if (!document.form1.fax_number.value.length <= 20) {
         alert("xxxxxxxxxxxxxxxxxxxx");
         return false;
     }
-    if (document.form1.e-mail.value.length > 100) {
+    if (document.form1.e-mail.value.length <= 100) {
         alert("xxxxxxxxxxxxxxxxxxxx");
         return false;
+    	}
     }
-    }
-        */
 </script>
 </html>
