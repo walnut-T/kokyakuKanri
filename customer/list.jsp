@@ -58,7 +58,11 @@
         <form action="CustomerServlet" method="post">
             <p>
                 <!-- TODO ｢新規登録｣ボタン -->
+                <%
+                    if (user.getLvl() >= 1) {
+                %>
 				<button name="state" value="new">新規登録</button>
+				<% } %>
                 <button name="state" value="search">検索条件画面</button>
             </p>
         </form>
