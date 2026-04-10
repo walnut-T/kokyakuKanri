@@ -49,7 +49,7 @@
         </table>
         <form action="CustomerServlet" method="post">
             <p>
-            <button name="state" value="add_success">OK</button>  <input type="button" value="戻る" onclick="history.back()">
+            <button name="state" value="update">OK</button>  <input type="button" value="戻る" onclick="history.back()">
     
         
 
