@@ -236,16 +236,11 @@ public class CustomerServlet extends BaseServlet {
     	 CustomerLogic customerLogic = new CustomerLogic();
 
     	 if (errMessage == null) {
-    		 getServletContext()
-    	     .getRequestDispatcher("/WEB-INF/customer/add_success.jsp")
-    	     .forward(request, response);
+    		 getServletContext().getRequestDispatcher("/WEB-INF/customer/add_success.jsp").forward(request, response);
     	 } else {
     	     session.setAttribute("errMessage", errMessage);
-    	     getServletContext()
-             .getRequestDispatcher("/WEB-INF/customer/add_fail.jsp")
- 	         .forward(request, response);
-    	        
-    	     getServletContext().getRequestDispatcher("/WEB-INF/customer/new_confirm.jsp").forward(request, response);
+             
+    	     getServletContext().getRequestDispatcher("/WEB-INF/customer/add_fail.jsp").forward(request, response);
     	 }
     	    
     }
