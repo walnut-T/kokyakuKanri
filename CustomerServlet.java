@@ -231,8 +231,23 @@ public class CustomerServlet extends BaseServlet {
     private void procAdd(HttpServletRequest request, HttpServletResponse response, HttpSession session)
             throws ServletException, IOException {
         // TODO 未実装（千々岩）
+    	 String errMessage = null;
+    	 CustomerBean customer =(CustomerBean)session.getAttribute("customerNew");
+    	 CustomerLogic customerLogic = new CustomerLogic();
 
-        getServletContext().getRequestDispatcher("/WEB-INF/xxxx/xxxx.jsp").forward(request, response);
+    	 if (errMessage == null) {
+    		 getServletContext()
+    	     .getRequestDispatcher("/WEB-INF/customer/add_success.jsp")
+    	     .forward(request, response);
+    	 } else {
+    	     session.setAttribute("errMessage", errMessage);
+    	     getServletContext()
+             .getRequestDispatcher("/WEB-INF/customer/add_fail.jsp")
+ 	         .forward(request, response);
+    	        
+    	     getServletContext().getRequestDispatcher("/WEB-INF/customer/new_confirm.jsp").forward(request, response);
+    	 }
+    	    
     }
 
     /**
