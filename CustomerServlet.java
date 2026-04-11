@@ -234,6 +234,7 @@ public class CustomerServlet extends BaseServlet {
     	 String errMessage = null;
     	 CustomerBean customer =(CustomerBean)session.getAttribute("customerNew");
     	 CustomerLogic customerLogic = new CustomerLogic();
+         errMessage = customerLogic.add(customer);       
 
     	 if (errMessage == null) {
     		 getServletContext().getRequestDispatcher("/WEB-INF/customer/add_success.jsp").forward(request, response);
