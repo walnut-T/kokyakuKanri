@@ -49,7 +49,7 @@
 				<!--
                 <input type="submit" value="送信">
              -->
-				<button name="state" value="add">送信</button>
+				<button name="state" value="new_confirm">送信</button>
 				<input type="button" value="戻る" onclick="history.back()">
 			</p>
 		</form>
