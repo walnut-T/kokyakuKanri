@@ -62,37 +62,16 @@
 			alert("氏名が入力されていません。");
 			return false;
 		}
-		if (document.form1.post_code.value == "") {
-			alert("郵便番号が入力されていません。");
-			return false;
-		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+		if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
 			alert("郵便番号は半角数字と半角ハイフンで入力してください");
 			return false;
 		}
-		if (document.form1.address1.value == "") {
-			alert("住所1が入力されていません。");
-			return false;
-		}
-		if (document.form1.address2.value == "") {
-			alert("住所2が入力されていません。");
-			return false;
-		}
-		if (document.form1.telephone_number.value == "") {
-			alert("電話番号が入力されていません。");
-			return false;
-		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+		if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
 			alert("電話番号は半角数字と半角ハイフンで入力してください");
 			return false;
 		}
-		if (document.form1.fax_number.value == "") {
-			alert("FAXが入力されていません。");
-			return false;
-		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+		if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
 			alert("電話番号は半角数字と半角ハイフンで入力してください");
-			return false;
-		}
-		if (document.form1.e - mail.value == "") {
-			alert("メールアドレスが入力されていません。");
 			return false;
 		}
 	}
