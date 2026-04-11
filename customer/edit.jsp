@@ -22,37 +22,37 @@
             	<tr>
                     <td class="title">氏名</td>
                     <td><input type="text" name="name" maxlength="20"
-                        value="<%=Edit.getName()%>"></td>
+                        value="<%=customer.getName()%>"></td>
                 </tr>
                 <tr>
                     <td class="title">郵便番号</td>
                     <td><input type="text" name="zip" maxlength="15"
-                        value="<%=Edit.getZip()%>"></td>
+                        value="<%=customer.getZip()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">住所1</td>
                     <td><input type="text" name="address1" maxlength="15"
-                        value="<%=Edit.getAddress1() %>"></td>
+                        value="<%=customer.getAddress1() %>"></td>
                 </tr>
                 <tr>
                  <td class="title">住所2</td>
                     <td><input type="text" name="address2" maxlength="15"
-                        value="<%=Edit.getAddress2()%>"></td>
+                        value="<%=customer.getAddress2()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">TEL</td>
                     <td><input type="text" name="tel" maxlength="15"
-                        value="<%=Edit.getTel()%>"></td>
+                        value="<%=customer.getTel()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">FAX</td>
                     <td><input type="text" name="fax" maxlength="15"
-                        value="<%=Edit.getFax()%>"></td>
+                        value="<%=customer.getFax()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">E-mail</td>
                     <td><input type="text" name="email" maxlength="15"
-                        value="<%=Edit.getEmail()%>"></td>
+                        value="<%=customer.getEmail()%>"></td>
                 </tr>
                 <tr>
                    
