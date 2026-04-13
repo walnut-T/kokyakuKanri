@@ -74,9 +74,8 @@ public class CustomerLogic {
 		// TODO 未実装（4/11折原実装中）
 		CustomerBean customer = (CustomerBean) request.getSession().getAttribute("customer");
 		if (customer == null) {
-			customer = new CustomerBean();
+			customer = new CustomerBean();	
 		}
-
 		customer.setName(StringUtil.exchangeESCEncoding(request.getParameter("user_name")));
 		customer.setZip(StringUtil.exchangeESCEncoding(request.getParameter("post_code")));
 		customer.setAddress1(StringUtil.exchangeESCEncoding(request.getParameter("address1")));
@@ -86,6 +85,8 @@ public class CustomerLogic {
 		customer.setEmail(StringUtil.exchangeESCEncoding(request.getParameter("e-mail")));
 		
 		request.setAttribute("customer", customer);
+		HttpSession session = request.getSession();
+		session.setAttribute("customer", customer);
 		return;
 	}
 }
