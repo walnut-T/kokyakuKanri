@@ -14,7 +14,7 @@
 
     <!-- ｢入力確認｣画面 -->
         <div class="main">
-        <h2>入力確認</h2>
+        <h2>入力の確認</h2>
         <table border="1">
             <tr>
                 <td class="title">氏名</td>
