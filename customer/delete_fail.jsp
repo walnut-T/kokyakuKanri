@@ -13,9 +13,9 @@
         <!-- TODO ｢削除未完了｣画面 -->
         <h2>削除未完了</h2>
         <h2><%=session.getAttribute("errMessage")%></h2>
-        <form action="UserServlet" method="post">
+        <form action="CustomerServlet" method="post">
             <p>
-                <button name="state" value="list">ユーザー一覧画面</button>
+                <button name="state" value="list">検索画面</button>
             </p>
         </form>
     </div>
