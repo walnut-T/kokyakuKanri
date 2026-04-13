@@ -34,6 +34,17 @@ public class CustomerLogic {
 		LogUtil.println(this.getClass().getSimpleName() + "#add");
 
 		// TODO 未実装
+		
+
+	/**
+	 * DAO経由でDBの顧客情報を更新する
+	 * @param customer 顧客情報Bean
+	 * @return エラーメッセージ(処理成功時、null)
+	 */
+	public String update(CustomerBean customer) {
+		LogUtil.println(this.getClass().getSimpleName() + "#update");
+
+		// TODO 未実装 4/13大塚
 		if (customer == null) {
             return MESSAGE_NO_EXIST_CORRESPOND_DATA;
         }
@@ -46,20 +57,6 @@ public class CustomerLogic {
         }
         return errMessage;
     }
-
-	/**
-	 * DAO経由でDBの顧客情報を更新する
-	 * @param customer 顧客情報Bean
-	 * @return エラーメッセージ(処理成功時、null)
-	 */
-	public String update(CustomerBean customer) {
-		LogUtil.println(this.getClass().getSimpleName() + "#update");
-
-		// TODO 未実装
-
-		return null;
-	}
-
 	/**
 	 * DAO経由でDBの顧客情報を削除する
 	 * @param customer 顧客情報Bean
