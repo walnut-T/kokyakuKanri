@@ -1,5 +1,7 @@
 package customer;
 
+import static constants.MessageConstants.*;
+
 import javax.servlet.http.HttpServletRequest;
 
 import dao.CustomerDao;
