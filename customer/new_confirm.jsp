@@ -14,7 +14,7 @@
 
     <!-- ｢入力確認｣画面 -->
         <div class="main">
-        <h2>詳細</h2>
+        <h2>入力確認</h2>
         <table border="1">
             <tr>
                 <td class="title">氏名</td>
@@ -47,7 +47,7 @@
         </table>
         <form action="CustomerServlet" method="post">
             <p>
-            <button name="state" value="add">送信</button> 
+            <button name="state" value="add">OK</button> 
             <input type="button" value="戻る" onclick="history.back()">
     </div>
 </body>
