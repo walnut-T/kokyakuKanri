@@ -232,9 +232,11 @@ public class CustomerServlet extends BaseServlet {
             throws ServletException, IOException {
         // TODO 未実装（千々岩）
     	 String errMessage = null;
-    	 CustomerBean customer =(CustomerBean)session.getAttribute("customerNew");
+    	 CustomerBean customer =(CustomerBean)session.getAttribute("customer");
     	 CustomerLogic customerLogic = new CustomerLogic();
-         errMessage = customerLogic.add(customer);       
+         errMessage = customerLogic.add(customer);
+
+        　session.removeAttribute("customer");
 
     	 if (errMessage == null) {
     		 getServletContext().getRequestDispatcher("/WEB-INF/customer/add_success.jsp").forward(request, response);
