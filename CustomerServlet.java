@@ -189,11 +189,11 @@ public class CustomerServlet extends BaseServlet {
             throws ServletException, IOException {
         // TODO 未実装4/10実装中(大塚)
         String errMessage = null;
-        CustomerBean customerEdit = (CustomerBean) session.getAttribute("customerEdit");
+        CustomerBean customer = (CustomerBean) session.getAttribute("customer");
         CustomerLogic customerLogic = new CustomerLogic();
-        errMessage = customerLogic.update(customerEdit);
+        errMessage = customerLogic.update(customer);
 
-        session.removeAttribute("customerEdit");
+        session.removeAttribute("customer");
 
         if (errMessage == null) {
             getServletContext().getRequestDispatcher("/WEB-INF/customer/update_success.jsp").forward(request, response);
@@ -214,7 +214,7 @@ public class CustomerServlet extends BaseServlet {
      * @param response  HTTPのレスポンス
      */
     private void procNew(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // TODO 未実装（折原）
+        // TODO （4/13折原実装）
 
         getServletContext().getRequestDispatcher("/WEB-INF/customer/new.jsp").forward(request, response);
     }
@@ -260,12 +260,18 @@ public class CustomerServlet extends BaseServlet {
     private void procDeleteConfirm(HttpServletRequest request, HttpServletResponse response, String id)
             throws ServletException, IOException {
         // TODO 未実装 →4/10実装中（鈴木）
-    	
-        int intId = Integer.parseInt(id);
+    	String errMessage = null;
+    	CustomerBean customer = (CustomerBean) request.getSession().getAttribute("customer");
         CustomerLogic customerLogic = new CustomerLogic();
-        CustomerBean customer = null;
-        customer = customerLogic.load(intId);
+        errMessage = customerLogic.delete(customer);
+        HttpSession session = request.getSession();
+        session.removeAttribute("customer");
 
+        if (errMessage == null) {
+            getServletContext().getRequestDispatcher("/WEB-INF/user/delete_success.jsp").forward(request, response);
+        } else {
+            session.setAttribute("errMessage", errMessage);
+        }
         getServletContext().getRequestDispatcher("/WEB-INF/customer/delete_confirm.jsp").forward(request, response);
     }
     
@@ -292,11 +298,11 @@ private void procDelete(HttpServletRequest request, HttpServletResponse response
         // TODO 未実装 →4/10実装中（鈴木）
         
         String errMessage = null;
-        CustomerBean customerEdit = (CustomerBean) session.getAttribute("customerEdit");
+        CustomerBean customer = (CustomerBean) session.getAttribute("customer");
         CustomerLogic customerLogic = new CustomerLogic();
-        errMessage = customerLogic.delete(customerEdit);
+        errMessage = customerLogic.delete(customer);
 
-        session.removeAttribute("customerEdit");
+        session.removeAttribute("customer");
 
         if (errMessage == null) {
             getServletContext().getRequestDispatcher("/WEB-INF/customer/delete_success.jsp").forward(request, response);
@@ -335,6 +341,8 @@ private void procDelete(HttpServletRequest request, HttpServletResponse response
         // TODO 未実装（大塚）
 		CustomerLogic customerLogic = new CustomerLogic();
     	customerLogic.setCustomerBeanFromRequestToSession(request);
+    	HttpSession session = request.getSession();
+		session.getAttribute("customer");
 
         getServletContext().getRequestDispatcher("/WEB-INF/customer/edit_confirm.jsp").forward(request, response);
     }
