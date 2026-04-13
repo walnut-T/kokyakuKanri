@@ -11,7 +11,7 @@
 	<div class="main">
 		<!-- TODO ｢新規登録完了｣画面 -->
 		<h2>新規登録完了</h2>
-		<form action="CostomerServlet" method="post">
+		<form action="CustomerServlet" method="post">
 			<p>
 				<button name="state" value="search">検索画面</button>
 			</p>
