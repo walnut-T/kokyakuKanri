@@ -89,10 +89,9 @@ public class CustomerLogic {
 		customer.setTel(StringUtil.exchangeESCEncoding(request.getParameter("telephone_number")));
 		customer.setFax(StringUtil.exchangeESCEncoding(request.getParameter("fax_number")));
 		customer.setEmail(StringUtil.exchangeESCEncoding(request.getParameter("e-mail")));
-		
+			
 		request.setAttribute("customer", customer);
-		HttpSession session = request.getSession();
-		session.setAttribute("customer", customer);
+		request.getSession().setAttribute("customer", customer);
 		return;
 	}
 }
