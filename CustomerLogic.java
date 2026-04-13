@@ -34,8 +34,9 @@ public class CustomerLogic {
 		LogUtil.println(this.getClass().getSimpleName() + "#add");
 
 		// TODO 未実装
+		return null;
+	}
 		
-
 	/**
 	 * DAO経由でDBの顧客情報を更新する
 	 * @param customer 顧客情報Bean
