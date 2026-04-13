@@ -333,6 +333,8 @@ private void procDelete(HttpServletRequest request, HttpServletResponse response
     private void procEditConfirm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // TODO 未実装（大塚）
+		CustomerLogic customerLogic = new CustomerLogic();
+    	customerLogic.setCustomerBeanFromRequestToSession(request);
 
         getServletContext().getRequestDispatcher("/WEB-INF/customer/edit_confirm.jsp").forward(request, response);
     }
