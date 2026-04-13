@@ -34,9 +34,18 @@ public class CustomerLogic {
 		LogUtil.println(this.getClass().getSimpleName() + "#add");
 
 		// TODO 未実装
+		if (customer == null) {
+            return MESSAGE_NO_EXIST_CORRESPOND_DATA;
+        }
 
-		return null;
-	}
+        String errMessage = null;
+        CustomerDao customerDao = new CustomerDao();
+        errMessage = customerDao.update(customer);
+        if (errMessage != null) {
+            errMessage = MESSAGE_CAN_NOT_UPDATE;
+        }
+        return errMessage;
+    }
 
 	/**
 	 * DAO経由でDBの顧客情報を更新する
