@@ -13,7 +13,7 @@
 	<div class="main">
 		<!-- TODO ｢新規登録｣画面 -->
 		<h2>新規登録</h2>
-		<form name="form1" action="CostomerServlet" method="post"
+		<form name="form1" action="CustomerServlet" method="post"
 			onsubmit="return funcConfirm()">
 			<table>
 				<tr>
