@@ -347,8 +347,12 @@ private void procDelete(HttpServletRequest request, HttpServletResponse response
      */
     private void procNewConfirm(HttpServletRequest request, HttpServletResponse response) throws ServletException,
             IOException, UnsupportedEncodingException {
-        // TODO 未実装（折原）
-
-        getServletContext().getRequestDispatcher("/WEB-INF/xxxx/xxxx.jsp").forward(request, response);
+       // TODO 未実装（折原実装中）
+    	
+    	String pram = StringUtil.exchangeESCEncoding(request.getParameter("state"));
+    	CustomerLogic customerLogic = new CustomerLogic();
+    	customerLogic.setCustomerBeanFromRequestToSession(request);
+		
+        getServletContext().getRequestDispatcher("/WEB-INF/customer/new_confirm.jsp").forward(request, response);
     }
 }
