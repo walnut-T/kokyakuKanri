@@ -236,7 +236,7 @@ public class CustomerServlet extends BaseServlet {
     	 CustomerLogic customerLogic = new CustomerLogic();
          errMessage = customerLogic.add(customer);
 
-        　session.removeAttribute("customer");
+         session.removeAttribute("customer");
 
     	 if (errMessage == null) {
     		 getServletContext().getRequestDispatcher("/WEB-INF/customer/add_success.jsp").forward(request, response);
