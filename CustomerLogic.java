@@ -38,7 +38,7 @@ public class CustomerLogic {
 		// TODO 未実装
 		return null;
 	}
-		
+
 	/**
 	 * DAO経由でDBの顧客情報を更新する
 	 * @param customer 顧客情報Bean
@@ -49,17 +49,18 @@ public class CustomerLogic {
 
 		// TODO 未実装 4/13大塚
 		if (customer == null) {
-            return MESSAGE_NO_EXIST_CORRESPOND_DATA;
-        }
+			return MESSAGE_NO_EXIST_CORRESPOND_DATA;
+		}
 
-        String errMessage = null;
-        CustomerDao customerDao = new CustomerDao();
-        errMessage = customerDao.update(customer);
-        if (errMessage != null) {
-            errMessage = MESSAGE_CAN_NOT_UPDATE;
-        }
-        return errMessage;
-    }
+		String errMessage = null;
+		CustomerDao customerDao = new CustomerDao();
+		errMessage = customerDao.update(customer);
+		if (errMessage != null) {
+			errMessage = MESSAGE_CAN_NOT_UPDATE;
+		}
+		return errMessage;
+	}
+
 	/**
 	 * DAO経由でDBの顧客情報を削除する
 	 * @param customer 顧客情報Bean
@@ -80,11 +81,14 @@ public class CustomerLogic {
 	public void setCustomerBeanFromRequestToSession(HttpServletRequest request) {
 		LogUtil.println(this.getClass().getSimpleName() + "#setCustomerBeanFromRequestToSession");
 
-		// TODO 未実装（4/11折原実装中）
+		// TODO 未実装（4/11折原実装中)
 		CustomerBean customer = (CustomerBean) request.getSession().getAttribute("customer");
 		if (customer == null) {
-			customer = new CustomerBean();	
+		    customer = new CustomerBean();	
 		}
+		if (request.getParameter("user_name") == null) {
+		    return;
+		}else {
 		customer.setName(StringUtil.exchangeESCEncoding(request.getParameter("user_name")));
 		customer.setZip(StringUtil.exchangeESCEncoding(request.getParameter("post_code")));
 		customer.setAddress1(StringUtil.exchangeESCEncoding(request.getParameter("address1")));
@@ -92,9 +96,9 @@ public class CustomerLogic {
 		customer.setTel(StringUtil.exchangeESCEncoding(request.getParameter("telephone_number")));
 		customer.setFax(StringUtil.exchangeESCEncoding(request.getParameter("fax_number")));
 		customer.setEmail(StringUtil.exchangeESCEncoding(request.getParameter("e-mail")));
-			
-		request.setAttribute("customer", customer);
+	
 		request.getSession().setAttribute("customer", customer);
 		return;
+		}
 	}
 }
