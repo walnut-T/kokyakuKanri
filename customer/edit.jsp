@@ -21,12 +21,12 @@
             <table>
             	<tr>
                     <td class="title">氏名</td>
-                    <td><input type="text" name="name" maxlength="20"
+                    <td><input type="text" name="user_name" maxlength="20"
                         value="<%=customer.getName()%>"></td>
                 </tr>
                 <tr>
                     <td class="title">郵便番号</td>
-                    <td><input type="text" name="zip" maxlength="15"
+                    <td><input type="text" name="post_code" maxlength="15"
                         value="<%=customer.getZip()%>"></td>
                 </tr>
                 <tr>
@@ -41,17 +41,17 @@
                 </tr>
                 <tr>
                  <td class="title">TEL</td>
-                    <td><input type="text" name="tel" maxlength="15"
+                    <td><input type="text" name="telephone_number" maxlength="15"
                         value="<%=customer.getTel()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">FAX</td>
-                    <td><input type="text" name="fax" maxlength="15"
+                    <td><input type="text" name="fax_number" maxlength="15"
                         value="<%=customer.getFax()%>"></td>
                 </tr>
                 <tr>
                  <td class="title">E-mail</td>
-                    <td><input type="text" name="email" maxlength="15"
+                    <td><input type="text" name="e-mail" maxlength="15"
                         value="<%=customer.getEmail()%>"></td>
                 </tr>
                 <tr>
@@ -90,18 +90,18 @@
     		if (document.form1.telephone_number.value == "") {
     			alert("電話番号が入力されていません。");
     			return false;
-    		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+    		} else if (!document.form1.telephone_number.value.match(/^[\x20-\x7E]+$/)) {
     			alert("電話番号は半角数字と半角ハイフンで入力してください");
     			return false;
     		}
     		if (document.form1.fax_number.value == "") {
     			alert("FAXが入力されていません。");
     			return false;
-    		} else if (!document.form1.post_code.value.match(/^[\x20-\x7E]+$/)) {
+    		} else if (!document.form1.fax_number.value.match(/^[\x20-\x7E]+$/)) {
     			alert("電話番号は半角数字と半角ハイフンで入力してください");
     			return false;
     		}
-    		if (document.form1.e - mail.value == "") {
+    		if (document.form1.e-mail.value == "") {
     			alert("メールアドレスが入力されていません。");
     			return false;
     		}
